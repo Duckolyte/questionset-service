@@ -5,7 +5,7 @@ import tornado.web
 #from view import partials
 
 # import controllers
-from ms_tornado_questionset.controller.questionset import QuestionHandler
+from ms_tornado_questionset.controller.questionset import QuestionHandler, ImageMapHandler
 
 # import connection
 from ms_tornado_questionset.application.mongo_connection_manager import MongoConnectionManager
@@ -17,6 +17,7 @@ class ApplicationContext(tornado.web.Application):
 
         handlers = [
             (r"/question", QuestionHandler)
+            (r"/imagemap", ImageMapHandler)
             ]
 
         # template_path='C:/Users/andygg/PycharmProjects/tornado-formalyser/templates'

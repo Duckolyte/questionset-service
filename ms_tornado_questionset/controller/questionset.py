@@ -6,7 +6,7 @@ from pymodm.errors import \
     MultipleObjectsReturned, \
     InvalidModel
 
-from ms_tornado_questionset.service.questionset import QuestionService
+from ms_tornado_questionset.service.questionset import QuestionService, ImageMapService
 from ms_tornado_questionset.controller.base import BaseHandler
 
 
@@ -50,10 +50,10 @@ class QuestionHandler(BaseHandler):
 
 
 # TODO Questionary Handler uses yield and async loads question by need
-class QuestionaryHandler(BaseHandler):
+class ImageMapHandler(BaseHandler):
 
     def get(self):
-        questionary = QuestionaryService.find_questionary(
+        image_map = ImageMapService.find_image_map(
             questionary_id=self.get_argument(name="id")
         )
 

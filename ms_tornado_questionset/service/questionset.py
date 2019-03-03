@@ -1,6 +1,6 @@
 #from ms_tornado_questionary.model.questionary import Questionary, Question, Answer
 #from ms_tornado_questionary.model.questionary import Question
-from ms_tornado_questionset.model.questionset import Question
+from ms_tornado_questionset.model.questionset import Question, ImageMap
 
 
 class QuestionSetService:
@@ -32,24 +32,10 @@ class QuestionService:
         question.save()
 
 
-'''
-class QuestionaryService:
+class ImageMapService:
 
     def __init__(self):
         pass
 
-    def find_questionary(self, questionary_id):
-        return Questionary.objects.get({'_id': questionary_id})
-
-    def create_questionary(self, questionary):
-        questionary.save()
-
-
-class AnswerService:
-
-    def __init__(self):
-        pass
-
-    def find_answer(self, answer_id):
-        return Answer.objects.get({'_id': answer_id})
-'''
+    def find_image_map(self, image_map_id):
+        return ImageMap.objects.get({'_id': image_map_id})

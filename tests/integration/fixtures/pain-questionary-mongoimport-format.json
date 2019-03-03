@@ -182,10 +182,10 @@
     [
       {
         "code": "0",
-        "max_range": "",
-        "min_range": "",
-        "step": "",
-        "value": "",
+        "max_range": "10",
+        "min_range": "0",
+        "step": "1",
+        "value": "5",
         "next": "/question?code=201"
       }
     ],
@@ -198,10 +198,10 @@
     [
       {
         "code": "0",
-        "max_range": "",
-        "min_range": "",
-        "step": "",
-        "value": "",
+        "max_range": "10",
+        "min_range": "0",
+        "step": "1",
+        "value": "5",
         "next": "/question?code=250"
       }
     ],

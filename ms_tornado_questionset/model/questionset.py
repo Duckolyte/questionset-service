@@ -28,6 +28,32 @@ class Question(MongoModel):
         connection_alias = 'questionary-con'
 
 
+class ImageMap(MongoModel):
+    '''
+    _id is auto generated
+    '''
+    mapId = fields.CharField()
+    mapsQuestionCode = fields.IntegerField()
+    areas = fields.ListField()
+
+    class Meta:
+        write_concern = WriteConcern(j=True)
+        connection_alias = 'questionary-con'
+
+
+class QuestionImage(MongoModel):
+    '''
+    _id is auto generated
+    '''
+    id = fields.CharField()
+    code = fields.IntegerField()
+    imageSource = fields.ImageField()
+
+    class Meta:
+        write_concern = WriteConcern(j=True)
+        connection_alias = 'questionary-con'
+
+
 class Answer(MongoModel):
     '''
     _id is auto generated
