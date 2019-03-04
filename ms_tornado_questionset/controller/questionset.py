@@ -9,6 +9,8 @@ from pymodm.errors import \
 from ms_tornado_questionset.service.questionset import QuestionService, ImageMapService
 from ms_tornado_questionset.controller.base import BaseHandler
 
+from ms_tornado_questionset.model.questionset import ImageMap
+
 
 class QuestionHandler(BaseHandler):
 
@@ -53,41 +55,38 @@ class QuestionHandler(BaseHandler):
 class ImageMapHandler(BaseHandler):
 
     def get(self):
-        image_map = ImageMapService.find_image_map(
-            questionary_id=self.get_argument(name="id")
+        img_service = ImageMapService()
+
+        '''
+        new_question = ImageMap(
+            mapId="101",
+            mapsQuestionCode="111",
+            areas=[
+                {
+                    "id": 0,
+                    "mapsAnswerCode": 0,
+                    "shape": "circle",
+                    "coords": "100,100,30",
+                    "areaPosX": 100,
+                    "areaPosY": 100,
+                    "areaWidth": "",
+                    "areaHeight": "",
+                    "areaRadius": 30
+                }
+            ]
         )
 
-        # yield self.write(question)
+        img_service.create_map(new_question)
+        '''
 
-        '''
-        questionary = {
-            'questions': [
-                {
-                    'code': 1,
-                    'label': 'frage_1?',
-                    'answers': [
-                        {
-                            'code': 1,
-                            'label': 'Ja',
-                            'next': 2
-                        }
-                    ]
-                },
-                {
-                    'code': 2,
-                    'label': 'frage_2?',
-                    'answers': [
-                        {
-                            'code': 1,
-                            'label': 'Ja',
-                            'next': 3
-                        }
-                    ]
-                }
-            ]}
-            
-        self.write(questionary)
-        '''
+        image_map = img_service.find_image_map(
+            question_code=self.get_argument(name="question_code")
+        ).to_son().to_dict()
+
+        self.set_header("Access-Control-Allow-Origin", "*")
+        self.write(image_map)
+
+        # yield self.write(question)
 
 
 

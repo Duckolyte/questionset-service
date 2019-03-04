@@ -1,6 +1,7 @@
 [
   {
     "code": "1",
+    "usesImage": false,
     "label": "Leiden Sie in der letzten Zeit an Schmerzen?",
     "answers": [
       {
@@ -18,6 +19,7 @@
   },
   {
     "code": "100",
+    "usesImage": true,
     "label": "Wo haben Sie Schmerzen, wo sind sie am stärksten?",
     "answers": [
       {
@@ -140,6 +142,7 @@
   },
   {
     "code": "101",
+    "usesImage": false,
     "label": "Auf welcher Seite?",
     "answers":
     [
@@ -163,6 +166,7 @@
   },
   {
     "code": "150",
+    "usesImage": false,
     "label": "Seit wann haben Sie diese Schmerzen ungefähr?",
     "answers":
     [
@@ -177,6 +181,7 @@
   },
   {
     "code": "200",
+    "usesImage": false,
     "label": "Wie stark sind die Schmerzen, wenn sie schlimm werden?",
     "answers":
     [
@@ -193,6 +198,7 @@
   },
   {
     "code": "201",
+    "usesImage": false,
     "label": "Wie stark sind die Schmerzen in Ruhe?",
     "answers":
     [
@@ -209,6 +215,7 @@
   },
   {
     "code": "250",
+    "usesImage": false,
     "label": "Wie würden Sie die Schmerzen beschreiben?",
     "answers":
     [
@@ -242,6 +249,7 @@
   },
   {
     "code": "300",
+    "usesImage": false,
     "label": "Sind die Schmerzen konstant oder kommen und gehen?",
     "answers":
     [
@@ -260,6 +268,7 @@
   },
   {
     "code": "301",
+    "usesImage": false,
     "label": "Wie lange dauern die Episoden, wenn die Schmerzen kommen?",
     "answers": [
       {
@@ -282,6 +291,7 @@
   },
   {
     "code": "350",
+    "usesImage": false,
     "label": "Haben Sie noch anderswo nennenswerte Schmerzen?",
     "answers": [
       {

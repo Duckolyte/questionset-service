@@ -16,7 +16,7 @@ class ApplicationContext(tornado.web.Application):
     def __init__(self):
 
         handlers = [
-            (r"/question", QuestionHandler)
+            (r"/question", QuestionHandler),
             (r"/imagemap", ImageMapHandler)
             ]
 

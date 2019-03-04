@@ -1,5 +1,3 @@
-#from ms_tornado_questionary.model.questionary import Questionary, Question, Answer
-#from ms_tornado_questionary.model.questionary import Question
 from ms_tornado_questionset.model.questionset import Question, ImageMap
 
 
@@ -24,6 +22,7 @@ class QuestionService:
         raw_question = Question.objects.get({'code': question_code})
         return Question(
             code=raw_question.code,
+            usesImage=raw_question.usesImage,
             label=raw_question.label,
             answers=raw_question.answers
         )
@@ -37,5 +36,13 @@ class ImageMapService:
     def __init__(self):
         pass
 
-    def find_image_map(self, image_map_id):
-        return ImageMap.objects.get({'_id': image_map_id})
+    def find_image_map(self, question_code):
+        raw_map = ImageMap.objects.get({'mapsQuestionCode': question_code})
+        return ImageMap(
+            mapId=raw_map.mapId,
+            mapsQuestionCode=raw_map.mapsQuestionCode,
+            areas=raw_map.areas
+        )
+
+    def create_map(self, map):
+        map.save()
