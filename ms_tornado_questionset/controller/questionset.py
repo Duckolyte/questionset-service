@@ -33,19 +33,20 @@ class QuestionHandler(BaseHandler):
 
         question_service.create_question(new_question)
         '''
-        try:
-            question = question_service.find_question_by_code(
-                question_code=self.get_argument(name="code")
-            ).to_son().to_dict()
-        except DoesNotExist:
-            self.write_error(
-                HTTPResponse(
-                    code=500,
-                    request=self.request,
-                    reason="Oops we are sorry. An unexpected error occurred."
-                )
-            )
-            return
+        # try:
+        question = question_service.find_question_by_code(
+            question_code=self.get_argument(name="code")
+        ).to_son().to_dict()
+
+        # except DoesNotExist:
+        #     self.write_error(
+        #         HTTPResponse(
+        #             code=500,
+        #             request=self.request,
+        #             reason="Oops we are sorry. An unexpected error occurred."
+        #         )
+        #     )
+        #     return
 
         self.set_header("Access-Control-Allow-Origin", "*")
         self.write(question)
