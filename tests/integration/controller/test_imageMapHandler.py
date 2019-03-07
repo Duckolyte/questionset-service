@@ -18,3 +18,7 @@ class TestImageMapHandler(AsyncHTTPTestCase):
         response_body = self.fetch('/imagemap?question_code=100').body
         json_response = loads(response_body)
         self.assertEqual(json_response['mapId'], '0')
+
+    def test_get_bad_code_url_argument(self):
+        response = self.fetch('/imagemap?question_code=-1')
+        self.assertEqual(response.code, 500)

@@ -3,7 +3,6 @@ from json import loads
 from tornado.testing import AsyncHTTPTestCase
 from pymodm.errors import DoesNotExist
 
-
 from ms_tornado_questionset.ms_questionset import setup_server
 
 
@@ -21,6 +20,6 @@ class TestQuestionHandler(AsyncHTTPTestCase):
         json_response = loads(response_body)
         self.assertEqual(json_response['code'], '1')
 
-    def test_get_response_content(self):
+    def test_get_bad_code_url_argument(self):
         response = self.fetch('/question?code=-1')
         self.assertEqual(response.code, 500)
